@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline'
-import Cart from './Cart';
+import Cart from './Cart/Cart';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -20,7 +20,7 @@ const productPage = ({ title, product }) => {
 
         <Header />
         <PrevBtn />
-        <ProductItem img={product.image.desktop} title={product.name} text={product.description} price={product.price} />
+        <ProductItem product={product}  />
         <Features text={product.features} includes={product.includes} />
         <Cards img1={product.gallery.first.desktop} img2={product.gallery.second.desktop} img3={product.gallery.third.desktop} img3b={product.gallery.third.mobile} />
         <Recommendations items={product.others} />
@@ -30,6 +30,8 @@ const productPage = ({ title, product }) => {
     </div>
   )
 }
+
+// img={product.image.desktop} title={product.name} text={product.description} price={product.price}
 
 export default productPage
 

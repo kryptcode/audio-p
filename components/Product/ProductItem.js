@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import CartContext from '../../context'
 
-const ProductItem = ({ img, title, text, price }) => {
+const ProductItem = ({ product }) => {
     const [counter, setCounter] = useState(1)
+    const { addToCart } = useContext(CartContext);
 
     const increment = () => {
-        setCounter(amount + 1);
+        setCounter(counter + 1);
       };
     
       const decrement = () => {
@@ -14,20 +16,20 @@ const ProductItem = ({ img, title, text, price }) => {
   return (
     <div className='w-[95%] md:w-[85%] mx-auto flex flex-col md:flex-row items-center space-x-0 md:space-x-10 space-y-10 md:space-y-0 py-12'>
         <div className='flex-1'>
-            <img src={img} alt="" />
+            <img src={product.image.desktop} alt="" />
         </div>
         <div className='flex-1'>
             <h5 className='uppercase text-lg tracking-[0.3em] text-[#d87d4a] mb-6'>
                 new product
             </h5>
             <h2 className='uppercase text-4xl font-bold w-full md:w-2/3 tracking-wide mb-8'>
-                {title}
+                {product.name}
             </h2>
             <p className='text-gray-600 font-semibold w-full md:w-[80%] mb-9'>
-            {text}
+            {product.description}
             </p>
             <h6 className='text-xl font-semibold mb-7 tracking-wider'>
-                ${price.toLocaleString('us')}
+                ${product.price.toLocaleString('us')}
             </h6>
             <div className='flex space-x-8 items-center'>
                 <div className='flex space-x-6 items-center p-2 bg-gray-400/40 text-lg'>
@@ -41,7 +43,7 @@ const ProductItem = ({ img, title, text, price }) => {
                         +
                     </span>
                 </div>
-                <button className='bg-[#d87d4a] py-2 px-5 text-white font-semibold uppercase text-lg hover:opacity-80 transition duration-200 ease-linear'>
+                <button className='bg-[#d87d4a] py-2 px-5 text-white font-semibold uppercase text-lg hover:opacity-80 transition duration-200 ease-linear' onClick={() => addToCart(product, counter)}>
                     add to cart
                 </button>
             </div>

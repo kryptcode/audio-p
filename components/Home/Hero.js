@@ -1,6 +1,7 @@
-import React from 'react'
+import {useRouter} from 'next/router'
 
 const Hero = () => {
+  const router = useRouter()
   return (
     <div className="bg-[url('https://github.com/MarekBombera/audiophile/blob/main/public/assets/home/mobile/image-hero.jpg?raw=true')] md:bg-[url('https://audiophile-gamma.vercel.app/assets/home/desktop/image-hero.jpg')] bg-center bg-contain">
         <div className='bg-white/30 h-[1px]  w-[95%] md:w-[85%] mx-auto mb-3 ' />
@@ -16,6 +17,7 @@ const Hero = () => {
           </p>
           <button
             className='text-white py-2 px-5 bg-[#d87d4a] uppercase tracking-widest text-sm font-semibold hover:opacity-60 transition duration-200 ease-in'
+            onClick={() => router.push('/products/zx99-headphones')}
           >
             see product
           </button>

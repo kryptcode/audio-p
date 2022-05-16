@@ -1,6 +1,7 @@
-import React from 'react'
+import { useRouter } from 'next/router'
 
 const ZXNineBanner = () => {
+    const router = useRouter()
   return (
     <div className='py-12'>
         <div className='w-[95%] md:w-[85%] mx-auto bg-[#d87d4a] flex flex-col md:flex-row space-x-0 md:space-x-16 space-y-6 md:space-y-0 pt-10 px-12 rounded-md'>
@@ -15,7 +16,7 @@ const ZXNineBanner = () => {
                 <p className='text-white w-full md:w-[70%] mb-5'>
                 Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
                 </p>
-                <button className='bg-black text-white py-2 px-4 uppercase text-sm font-semibold tracking-wider transition duration-200 ease-linear hover:opacity-70'>
+                <button className='bg-black text-white py-2 px-4 uppercase text-sm font-semibold tracking-wider transition duration-200 ease-linear hover:opacity-70' onClick={() => router.push('/products/zx9-speaker')}>
                     see product
                 </button>
             </div>

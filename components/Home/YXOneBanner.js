@@ -1,6 +1,8 @@
 import React from 'react'
+import {useRouter} from 'next/router'
 
 const YXOneBanner = () => {
+    const router = useRouter()
   return (
     <div className='w-[95%] md:w-[85%] mx-auto my-8 flex flex-col md:flex-row space-y-5 md:space-y-0 space-x-0 md:space-x-10'>
         <div className='flex-1'>
@@ -10,7 +12,7 @@ const YXOneBanner = () => {
             <h4 className='text-3xl font-semibold tracking-wider mb-6'>
                 YX1 EARPHONES
             </h4>
-            <button className='border border-black text-sm py-2 px-4 font-semibold transition duration-200 ease-in hover:bg-black hover:text-white'>
+            <button className='border border-black text-sm py-2 px-4 font-semibold transition duration-200 ease-in hover:bg-black hover:text-white' onClick={() => router.push('/products/yx1-earphones')}>
                 SEE PRODUCT
             </button>
         </div>
