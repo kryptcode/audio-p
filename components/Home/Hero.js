@@ -17,7 +17,7 @@ const Hero = () => {
           </p>
           <button
             className='text-white py-2 px-5 bg-[#d87d4a] uppercase tracking-widest text-sm font-semibold hover:opacity-60 transition duration-200 ease-in'
-            onClick={() => router.push('/products/zx99-headphones')}
+            onClick={() => router.push('/products/xx99-headphones')}
           >
             see product
           </button>
