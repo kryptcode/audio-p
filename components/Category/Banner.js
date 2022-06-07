@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const Banner = ({ img, title, text, slug, rev }) => {
     const route = useRouter()
   return (
-    <div className={`w-[95%] md:w-[85%] mx-auto flex flex-col ${rev ? 'md:flex-row-reverse' : 'md:flex-row'} items-center space-x-0 md:space-x-10`}>
+    <div className={`w-[95%] md:w-[85%] mx-auto flex flex-col mb-4 ${rev ? 'md:flex-row-reverse' : 'md:flex-row'} items-center space-x-0 md:space-x-10`}>
         <div className='flex-1'>
             <img src={img} alt="" />
         </div>
