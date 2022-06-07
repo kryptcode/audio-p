@@ -1,6 +1,8 @@
 import React from 'react'
+import { useRouter } from 'next/router'
 
 const Footer = () => {
+  const router = useRouter()
   return (
     <div className='bg-black'>
         <div className='w-[95%] md:w-[85%] mx-auto text-white py-7 '>
@@ -9,10 +11,10 @@ const Footer = () => {
                     <img src="https://audiophile-gamma.vercel.app/assets/shared/desktop/logo.svg" alt="" />
                 </div>
                 <div className='flex flex-col md:flex-row space-x-0 text-center md:text-left md:space-x-10 space-y-3 md:space-y-0 font-semibold tracking-wider '>
-                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear'>HOME</p>
-                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear'>HEADPHONES</p>
-                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear'>SPEAKERS</p>
-                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear'>EARPHONES</p>
+                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear' onClick={() => router.push('/')}>HOME</p>
+                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear' onClick={() => router.push('/headphones')}>HEADPHONES</p>
+                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear' onClick={() => router.push('/speakers')}>SPEAKERS</p>
+                    <p className='hover:text-[#d87d4a] cursor-pointer transition duration-200 ease-linear' onClick={() => router.push('/earphones')}>EARPHONES</p>
                 </div>
             </div>
             <div className='flex flex-col md:flex-row text-center md:text-left justify-between gap-8 mb-8'>
