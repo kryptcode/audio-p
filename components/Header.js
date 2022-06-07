@@ -15,7 +15,6 @@ const Header = () => {
           className='cursor-pointer hover:opacity-80 transition-all duration-200 flex md:hidden'
           onClick={() => setIsOpen(!isOpen)}
         >
-          <MenuIcon className='h-6' />
           { isOpen ? (
            <XIcon className='h-6' />
           ) : (
