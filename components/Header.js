@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
-import { MenuIcon, ShoppingCartIcon } from '@heroicons/react/outline'
+import { MenuIcon, ShoppingCartIcon, XIcon } from '@heroicons/react/outline'
 import Cart from './Cart/Cart';
 
 const Header = () => {
@@ -12,10 +12,16 @@ const Header = () => {
     <div className='text-gray-300 bg-black sticky top-0 z-10'>
       <div className='w-[95%] md:w-[85%] mx-auto flex justify-between items-center py-7' >
         <div 
-          className='cursor-pointer hover:opacity-80 transition duration-200 flex md:hidden'
+          className='cursor-pointer hover:opacity-80 transition-all duration-200 flex md:hidden'
           onClick={() => setIsOpen(!isOpen)}
         >
           <MenuIcon className='h-6' />
+          { isOpen ? (
+           <XIcon className='h-6' />
+          ) : (
+            <MenuIcon className='h-6' />
+           )
+          }
         </div>
         <div onClick={() => router.push('/')} className='cursor-pointer'>
             <img src="https://audiophile-gamma.vercel.app/assets/shared/desktop/logo.svg" alt="audiophile" />
